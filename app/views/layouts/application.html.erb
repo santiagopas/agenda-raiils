@@ -1,6 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/path/to/tailwind.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- ... -->
+  
     <title>AgendaRails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -8,9 +14,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+</head>
+<body class="blue-gray-50">
+  <%= render "home/header" %>
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>
+
+
