@@ -19,7 +19,7 @@ class FriendsTest < ApplicationSystemTestCase
     fill_in "Instagrargm", with: @friend.instagrargm
     fill_in "Last name", with: @friend.last_name
     fill_in "Phone", with: @friend.phone
-    click_on "Create Friend"
+    click_on "Crear Contacto"
 
     assert_text "Friend was successfully created"
     click_on "Back"

@@ -1,7 +1,7 @@
 <%= form_with(model: friend) do |form| %>
   <% if friend.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+      <h2><%= pluralize(friend.errors.count, "error") %> Prohibido que este amigo se guarde:</h2>
 
       <ul>
         <% friend.errors.each do |error| %>
@@ -11,6 +11,46 @@
     </div>
   <% end %>
 
+<div class="min-h-screen flex justify-center items-center">
+  <div class="absolute w-60 h-60 rounded-xl bg-purple-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block"></div>
+  <div class="absolute w-48 h-48 rounded-xl bg-purple-300 -bottom-6 -right-10 transform rotate-12 hidden md:block"></div>
+  <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+    <div>
+      <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Crea un nuevo contacto</h1>
+    </div>
+    <div class="space-y-4">
+  
+      <%= form.label :first_name, class:"hidden" %>
+      <%= form.text_field :first_name, class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none", placeholder:"Nombre"  %>
+      
+      <%= form.label :last_name, class:"hidden" %>
+      <%= form.text_field :last_name, class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none", placeholder:"Apellido" %>
+
+      <%= form.label :email, class:"hidden" %>
+      <%= form.text_field :email, class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none", placeholder:"Email" %>
+
+      <%= form.label :phone, class:"hidden" %>
+      <%= form.text_field :phone, class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none", placeholder:"Teléfono" %>
+
+      <%= form.label :instagrargm, class:"hidden" %>
+      <%= form.text_field :instagrargm, class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none", placeholder:"Instagram" %>
+    </div>
+    <div class="text-center mt-6">
+      <%= form.submit class:"py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl" %>
+    </div>
+    <div class="text-center">
+      <%= link_to 'Mostrar', @friend %> |
+      <%= link_to 'Volver', friends_path %>
+    </div>
+
+  </div>
+  <div class="w-40 h-40 absolute bg-purple-300 rounded-full top-0 right-12 hidden md:block"></div>
+  <div class="w-20 h-40 absolute bg-purple-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block"></div>
+</div>
+<% end %>
+<%
+=begin%>
+ 
   <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
@@ -39,4 +79,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+ 
+<%
+=end%>
