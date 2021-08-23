@@ -1,14 +1,6 @@
-<%
-=begin%>
- <h1 class="text-lg text-center font-bold m-5">Editar contacto</h1> 
-<%
-=end%>
+<h1>Editing Friend</h1>
 
 <%= render 'form', friend: @friend %>
 
-<%
-=begin%>
- <%= link_to 'Mostrar', @friend %> |
-<%= link_to 'Volver', friends_path %> 
-<%
-=end%>
+<%= link_to 'Show', @friend %> |
+<%= link_to 'Back', friends_path %>

@@ -16,7 +16,7 @@
   <div class="absolute w-48 h-48 rounded-xl bg-purple-300 -bottom-6 -right-10 transform rotate-12 hidden md:block"></div>
   <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
     <div>
-      <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Crea un nuevo contacto</h1>
+      <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Datos del contacto</h1>
     </div>
     <div class="space-y-4">
   
@@ -34,13 +34,15 @@
 
       <%= form.label :instagrargm, class:"hidden" %>
       <%= form.text_field :instagrargm, class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none", placeholder:"Instagram" %>
+
+      <%= form.number_field :user_id, id: :friend_user_id, class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none", value:current_user.id, type: :hidden %>
     </div>
     <div class="text-center mt-6">
       <%= form.submit class:"py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl" %>
     </div>
     <div class="text-center">
       <%= link_to 'Mostrar', @friend %> |
-      <%= link_to 'Volver', friends_path %>
+      <%= link_to 'Volver', friends_path %> 
     </div>
 
   </div>
@@ -48,37 +50,3 @@
   <div class="w-20 h-40 absolute bg-purple-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block"></div>
 </div>
 <% end %>
-<%
-=begin%>
- 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instagrargm %>
-    <%= form.text_field :instagrargm %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
- 
-<%
-=end%>

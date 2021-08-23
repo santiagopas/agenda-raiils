@@ -1,4 +1,4 @@
-<header class="min-w-full md:container md:mx-auto absolute">
+<header class="min-w-full md:container md:mx-auto sticky">
 		<nav class="bg-white shadow-lg">
 			<div class="max-w-6xl mx-auto px-4">
 				<div class="flex justify-between">
@@ -14,9 +14,7 @@
 							<div class="hidden md:flex items-center space-x-1">
 								<%= link_to "Perfil", edit_user_registration_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold hover:text-indigo-500" %>
 							</div>
-							<div class="hidden md:flex items-center space-x-1">
-								<%= link_to "Contactos", friends_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold hover:text-indigo-500" %>
-							</div>
+
 
 							<% else %>
 
@@ -54,7 +52,9 @@
 
 			<div class="hidden mobile-menu">
 				<ul class="">
-					<li class="active"><%= link_to "Inicio", home_about_path, class:"block text-sm px-2 py-4 text-white bg-indigo-500 font-semibold" %></li>
+					<li class="active"><%= link_to "Registro", new_user_registration_path, class:"block text-sm px-2 py-4 text-white bg-indigo-500 font-semibold" %></li>
+					<li class="active"><%= link_to "Iniciar sesión", new_user_session_path, class:"block text-sm px-2 py-4 text-white bg-indigo-500 font-semibold" %></li>
+
 				</ul>
 			</div>
 			<script>
