@@ -1,0 +1,39 @@
+<div class="min-h-screen bg-gray-100 flex justify-center items-center">
+<div class="absolute w-60 h-60 rounded-xl bg-purple-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block shadow-xl"></div>
+  <div class="absolute w-48 h-48 rounded-xl bg-purple-300 -bottom-6 -right-10 transform rotate-12 hidden md:block shadow-xl"></div>
+<div class="py-20 px-40 bg-white rounded-2xl shadow-xl z-20">
+    <div>
+      <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Iniciar Sesión</h1>
+    </div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="space-y-4">
+    <%= f.label :email, class:"hidden" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none" %>
+  </div>
+
+  <div class="space-y-4">
+    <%= f.label :password, class:"hidden" %><br />
+    <%= f.password_field :password, autocomplete: "current-password", placeholder:"Contraseña", class:"block text-sm py-3 px-4 rounded-lg w-full border outline-none" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="space-y-4 font-bold flex">
+      <%= f.check_box :remember_me %>
+      <p class="ml-6">Recordarme</p>
+      <%= f.label :remember_me, class:"hidden" %>
+    </div>
+  <% end %>
+
+  <div class="text-center mt-6 mb-8">
+  <button class="py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl shadow-xl">
+    <%= f.submit "Aceptar", class:"font-semibold text-white text-lg bg-purple-400 " %>
+  </button>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+<div class="w-40 h-40 absolute bg-purple-300 rounded-full top-0 right-12 hidden md:block shadow-xl"></div>
+  <div class="w-20 h-40 absolute bg-purple-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block shadow-xl"></div>
+</div>

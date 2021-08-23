@@ -1,19 +1,37 @@
-<header class="min-w-full md:container md:mx-auto">
+<header class="min-w-full md:container md:mx-auto absolute">
 		<nav class="bg-white shadow-lg">
 			<div class="max-w-6xl mx-auto px-4">
 				<div class="flex justify-between">
 					<div class="flex space-x-7">
 						<div class="flex flex-row items-center">
-								<img src="https://repositorio-imagenes.netlify.app/img/logo512.png" alt="Logo" class="h-8 w-8 mr-2">
-								<%= link_to "Agenda", root_path, class:"font-semibold text-gray-500 text-lg" %>	
-						</div>
+									<img src="https://repositorio-imagenes.netlify.app/img/logo512.png" alt="Logo" class="h-8 w-8 mr-2">
+									<%= link_to "Agenda", root_path, class:"font-semibold text-gray-500 text-lg" %>	
+							</div>
+							<% if user_signed_in? %>
+							<div class="hidden md:flex items-center space-x-1">
+								<%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold hover:text-indigo-500" %>
+							</div>
+							<div class="hidden md:flex items-center space-x-1">
+								<%= link_to "Perfil", edit_user_registration_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold hover:text-indigo-500" %>
+							</div>
+							<div class="hidden md:flex items-center space-x-1">
+								<%= link_to "Contactos", friends_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold hover:text-indigo-500" %>
+							</div>
 
-						<div class="hidden md:flex items-center space-x-1">
-							<%= link_to "Inicio", home_about_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold  hover:text-indigo-500 " %>
-						</div>
-						<div class="hidden md:flex items-center space-x-1">
-							<%= link_to "Contactos", friends_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold hover:text-indigo-500" %>
-						</div>
+							<% else %>
+
+
+
+							<div class="hidden md:flex items-center space-x-1">
+								<%= link_to "Registro", new_user_registration_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold  hover:text-indigo-500 " %>
+							</div>
+							<div class="hidden md:flex items-center space-x-1">
+								<%= link_to "Iniciar sesión", new_user_session_path, class:"py-4 px-2 text-gray-500  border-indigo-500 font-semibold hover:text-indigo-500" %>
+							</div>
+
+
+							<% end %>
+
 					</div>
 
 					<div class="md:hidden flex items-center">
